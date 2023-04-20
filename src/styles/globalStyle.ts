@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { AsideVar, BasicVar, DefaultColor, DeviceWidth, FontSize, FontSize_Sm, FontStyle, device } from "./variables";
+import { AsideVar, BasicVar, DefaultColor, DeviceWidth, FontSize, FontStyle } from "./variables";
 import { setVariable } from "utils/style.utils";
 import TacticRound from "assets/font/tactic-round/TacticRound-Bld.ttf";
 import Gilroy from "assets/font/gilroy/Gilroy-Regular.ttf";
@@ -54,10 +54,6 @@ const GlobalStyle = createGlobalStyle`
 		background-position: 25% 100%;
 		overflow: hidden;
     	user-select: none;
-
-		@media ${device.laptop} {
-			${setVariable(FontSize_Sm)}
-		}
 
 		box-sizing: border-box;
 		font-family: ${BasicVar.font1.label};

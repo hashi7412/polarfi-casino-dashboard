@@ -1,10 +1,10 @@
+import React from "react";
 import Icon from "components/icon";
 import { Box } from "elements";
 import FBox from "elements/fbox";
-import Heading from "elements/heading";
+import Logo from "elements/logo";
 import Text from "elements/text";
-import React from "react";
-import { BasicVar, DefaultColor, FontSize } from "styles/variables";
+import { BasicVar, DefaultColor } from "styles/variables";
 
 const Header = () => {
 	const address = '0x61dd481a114a2e761c554b641742c973867899d3';
@@ -13,16 +13,7 @@ const Header = () => {
 			p={'1.5rem'}
 			bdb={`2px solid ${BasicVar.border.label}`}
 		>
-			<Heading
-				level={1}
-				fSize={FontSize.fSize3.label}
-				txtTrans={'uppercase'}
-				mb={'0.5rem'}
-				fFamily={BasicVar.font2.label}
-			>
-				Aster
-				<Text color={DefaultColor.warning.label}>Fi</Text>
-			</Heading>
+			<Logo />
 			<FBox
 				color={DefaultColor.warning.label}
 				hAlign={'space-between'}

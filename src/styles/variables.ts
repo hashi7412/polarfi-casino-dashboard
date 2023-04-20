@@ -60,23 +60,13 @@ const BasicVar = {
 }
 
 const FontSize = {
-	fSize:			{ value: '1.2rem',				key: '--fsize',					label: 'var(--fsize)' },
+	fSize:			{ value: '1rem',				key: '--fsize',					label: 'var(--fsize)' },
 	fSize1:			{ value: '3.75rem',				key: '--fsize1',				label: 'var(--fsize1)' },
 	fSize2:			{ value: '2rem',				key: '--fsize2',				label: 'var(--fsize2)' },
 	fSize3:			{ value: '1.5rem',				key: '--fsize3',				label: 'var(--fsize3)' },
 	fSize4:			{ value: '1.3rem',				key: '--fsize4',				label: 'var(--fsize4)' },
 	fSize5:			{ value: '1rem',				key: '--fsize5',				label: 'var(--fsize5)' },
 	fSize6:			{ value: '0.8rem',				key: '--fsize6',				label: 'var(--fsize6)' },
-}
-
-const FontSize_Sm = {
-	fSize:			{ value: '1rem',				key: '--fsize',					label: 'var(--fsize)' },
-	fSize1:			{ value: '2.7rem',				key: '--fsize1',				label: 'var(--fsize1)' },
-	fSize2:			{ value: '1.8rem',				key: '--fsize2',				label: 'var(--fsize2)' },
-	fSize3:			{ value: '1.3rem',				key: '--fsize3',				label: 'var(--fsize3)' },
-	fSize4:			{ value: '1.1rem',				key: '--fsize4',				label: 'var(--fsize4)' },
-	fSize5:			{ value: '1rem',				key: '--fsize5',				label: 'var(--fsize5)' },
-	fSize6:			{ value: '0.65rem',				key: '--fsize6',				label: 'var(--fsize6)' },
 }
 
 const FontStyle = {
@@ -98,6 +88,5 @@ export {
 	BasicVar,
 	FontSize,
 	DeviceWidth,
-	FontSize_Sm,
 	FontStyle
 }

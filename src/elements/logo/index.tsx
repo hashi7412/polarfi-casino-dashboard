@@ -1,19 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "elements/link";
 import Heading from "elements/heading";
 import Text from "elements/text";
 import { DefaultColor } from "styles/variables";
+import Img from "elements/img";
 
 interface LogoProps {
-	text?: string
+	text?: string,
+	w?: string
+	h?: string
 }
 
-const Logo = ({ text }: LogoProps) => {
+const Logo = ({ text, w, h }: LogoProps) => {
 	return (
-		<Link to={'/'}>
-			<Heading level={1}>
-				<Text color={DefaultColor.primary.label}>Car</Text>ShowRoom
-			</Heading>
+		<Link to={'/'} w={w || ''} h={h || ''}>
+			<Img src={'/logo192.webp'} />
 		</Link>
 	)
 }
@@ -21,9 +22,9 @@ const Logo = ({ text }: LogoProps) => {
 export const Logo2 = () => {
 	return (
 		<Link to={'/'}>
-		<Heading level={1}>
-			<Text color={DefaultColor.primary.label}>Car</Text>ShowRoom Management
-		</Heading>
+			<Heading level={1}>
+				<Text color={DefaultColor.primary.label}>Car</Text>ShowRoom Management
+			</Heading>
 		</Link>
 	);
 }
