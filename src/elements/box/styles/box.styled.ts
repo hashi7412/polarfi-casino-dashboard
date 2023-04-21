@@ -52,6 +52,17 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.lSpace			? `letter-spacing: ${styles.lSpace};`			: ``}
 		${styles.color			? `color: ${styles.color};`						: ``}
 		${styles.bg				? `background: ${styles.bg};`					: ``}
+		${styles.bgAttachment	? `background-attachment: ${styles.bgAttachment};`: ``}
+		${styles.bgBlendMode	? `background-blend-mode: ${styles.bgBlendMode};`: ``}
+		${styles.bgClip			? `background-clip: ${styles.bgClip};`			: ``}
+		${styles.bgColor		? `background-color: ${styles.bgColor};`		: ``}
+		${styles.bgImg			? `background: ${styles.bgImg};`				: ``}
+		${styles.bgOrigin		? `background-origin: ${styles.bgOrigin};`		: ``}
+		${styles.bgPos			? `background-position: ${styles.bgPos};`		: ``}
+		${styles.bgPosX			? `background-position-x: ${styles.bgPosX};`	: ``}
+		${styles.bgPoxY			? `background-position-y: ${styles.bgPoxY};`	: ``}
+		${styles.bgRepeat		? `background-repeat: ${styles.bgRepeat};`		: ``}
+		${styles.bgSize			? `background-size: ${styles.bgSize};`			: ``}
 		${styles.overflow		? `overflow: ${styles.overflow};`				: ``}
 		${styles.overflowX		? `overflow-x: ${styles.overflowX};`			: ``}
 		${styles.overflowY		? `overflow-y: ${styles.overflowY};`			: ``}
@@ -61,6 +72,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.bdl			? `border-left: ${styles.bdl};`					: ``}
 		${styles.bdr			? `border-right: ${styles.bdr};`				: ``}
 		${styles.bdradius		? `border-radius: ${styles.bdradius};`			: ``}
+		${styles.bShadow		? `box-shadow: ${styles.bShadow};`				: ``}
 		${styles.clipPath		? `clip-path: ${styles.clipPath};`				: ``}
 		${styles.transition		? `transition: ${styles.transition};`			: ``}
 		${styles.cursor			? `cursor: ${styles.cursor};`					: ``}

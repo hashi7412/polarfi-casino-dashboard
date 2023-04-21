@@ -91,7 +91,8 @@ declare interface CSSInlineStyleType {
 	bdr?:				BorderType
 	bdb?:				BorderType
 	bdl?:				BorderType
-	bdradius?:			BorderRadiusType
+	bdradius?:			BoxShadowType
+	bShadow?:			BorderShadowType
 	overflow?:			OverflowType
 	overflowX?:			OverflowType
 	overflowY?:			OverflowType

@@ -19,7 +19,10 @@ const DashLayout = () => {
                     overflow={'auto'}
                 >
                     <Header />
-                    <Box flex={1}>
+                    <Box
+                        flex={1}
+                        p={'0 2rem'}
+                    >
                         <Outlet />
                     </Box>
                 </FBox>
