@@ -10,8 +10,8 @@ interface LogoProps {
 
 const Logo = ({ text, w, h }: LogoProps) => {
 	return (
-		<Link to={'/'} w={w || ''} h={h || ''}>
-			<Img src={'/logo192.webp'} />
+		<Link to={'/'}>
+			<Img src={'/logo192.webp'} h={h || '65px'} />
 		</Link>
 	)
 }

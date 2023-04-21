@@ -64,6 +64,8 @@ declare type BorderType						= CSSOriginType | string
 
 declare type BorderRadiusType               = CSSOriginType | string
 
+declare type BoxShadowType                  = CSSOriginType | string
+
 declare type OverflowType					= CSSOriginType | 'auto' | 'hidden' | 'overflow-y' | 'overflow-x'
 
 declare type TransitionType    				= CSSOriginType | string

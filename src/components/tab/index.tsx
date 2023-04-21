@@ -10,7 +10,7 @@ interface PropsType {
     setActiveKey?: any
 }
 
-const Tab:React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) => {
+const Tab: React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) => {
     return (
         <FBox
             fDir={'column'}
@@ -22,35 +22,37 @@ const Tab:React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) =
                 g={'0.5rem'}
                 p={'0.5rem'}
                 mb={'1.5rem'}
-                bg={BasicVar.bg2.label}
+                bg={BasicVar.bgCard.label}
                 bdradius={BasicVar.bRound.label}
             >
                 {items.map((item, key) => (
                     <FBox
                         as={'button'}
                         key={key}
-                        onClick={() => setActiveKey ? setActiveKey(item) : null}
+                        onClick={() => setActiveKey ? setActiveKey(item, key) : null}
                         valign={'center'}
-                        p={'0.5rem 1rem'}
-                        bg={activeKey === key ? DefaultColor.warning.label : 'transparent'}
+                        p={'0.7rem 1.2rem'}
+                        bg={activeKey === key ? BasicVar.bg.label : 'transparent'}
                         bdradius={BasicVar.bRound.label}
                         g={'0.5rem'}
-						transition={'all ease-in-out .2s'}
+                        transition={'all ease-in-out .2s'}
                     >
                         <Text
-                            color={activeKey === key ? DefaultColor.black.label : BasicVar.border2.label}
+                            color={activeKey === key ? DefaultColor.white.label : BasicVar.border2.label}
                         >
                             {item.label}
                         </Text>
-                        <Text
-                            p={'0.2rem 0.5rem'}
-                            bg={DefaultColor.black.label}
-                            fSize={FontSize.fSize6.label}
-                            color={DefaultColor.white.label}
-                            bdradius={BasicVar.bRadius.label}
-                        >
-                            {item.badge}
-                        </Text>
+                        {item.badge && (
+                            <Text
+                                p={'0.2rem 0.5rem'}
+                                bg={DefaultColor.black.label}
+                                fSize={FontSize.fSize6.label}
+                                color={DefaultColor.white.label}
+                                bdradius={BasicVar.bRadius.label}
+                            >
+                                {item.badge}
+                            </Text>
+                        )}
                     </FBox>
                 ))}
             </FBox>

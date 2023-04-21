@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "elements";
 import FBox from "elements/fbox";
 import Menu from "../nav";
-import { AsideVar, BasicVar, HeaderVar } from "styles/variables";
+import { AsideVar, BasicVar, HeaderVar, styledShadow } from "styles/variables";
 import Logo from "elements/logo";
 import Link from "elements/link";
 
@@ -15,6 +15,7 @@ const Sidebar = () => {
                 minW: AsideVar.tabletW.label
             }}
             bg={BasicVar.bg2.label}
+            bShadow={styledShadow}
         >
             <FBox
                 valign={'center'}

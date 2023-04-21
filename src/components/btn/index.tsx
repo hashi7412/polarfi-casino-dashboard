@@ -1,6 +1,6 @@
 import React from "react";
 import { BoxPropsType } from "elements/box";
-import { BasicVar, DefaultColor } from "styles/variables";
+import { BasicVar, DefaultColor, styledShadow } from "styles/variables";
 import FBox from "elements/fbox";
 
 interface ButtonProps extends BoxPropsType {
@@ -20,6 +20,9 @@ const Button: React.FC<ButtonProps> = ({ children, bg, color, ...rest }) => {
 			bg={DefaultColor[bg || 'primary'].label}
 			bdradius={BasicVar.bRound.label}
 			color={DefaultColor[color || 'light'].label}
+			hover={{
+				bShadow: styledShadow
+			}}
 			{...rest}
 		>
 			{children}
