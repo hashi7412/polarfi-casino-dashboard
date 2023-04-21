@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { AsideVar, BasicVar, DefaultColor, DeviceWidth, FontSize, FontStyle } from "./variables";
+import { AsideVar, BasicVar, ChatboxVar, DefaultColor, DeviceWidth, FontSize, FontStyle, HeaderVar } from "./variables";
 import { setVariable } from "utils/style.utils";
 import TacticRound from "assets/font/tactic-round/TacticRound-Bld.ttf";
 import Gilroy from "assets/font/gilroy/Gilroy-Regular.ttf";
@@ -40,7 +40,10 @@ const GlobalStyle = createGlobalStyle`
 		${setVariable(DeviceWidth)}
 		${setVariable(BasicVar)}
 		${setVariable(FontSize)}
+		${setVariable(FontStyle)}
 		${setVariable(AsideVar)}
+		${setVariable(HeaderVar)}
+		${setVariable(ChatboxVar)}
 	}
 
 	html {

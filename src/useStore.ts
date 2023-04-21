@@ -9,6 +9,7 @@ const langs:any = {
 const initialState:StoreObject = {
 	lang: "en-US",
 	theme: "dark",
+	user: null
 };
 
 const getStore = (initialState: StoreObject) => {

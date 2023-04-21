@@ -3,8 +3,8 @@ const DefaultColor = {
 	black:			{ value: '#000000',			key: '--black',			label: 'var(--black)' },
 	light:			{ value: '#f8f9fa',			key: '--light',			label: 'var(--light)' },
 	dark:			{ value: '#343a40',			key: '--dark',			label: 'var(--dark)' },
-	primary:		{ value: '#B7D5ED',			key: '--primary',		label: 'var(--primary)' },
-	success:		{ value: '#28a745',			key: '--success',		label: 'var(--success)' },
+	primary:		{ value: '#959DE1',			key: '--primary',		label: 'var(--primary)' },
+	success:		{ value: '#29CF00',			key: '--success',		label: 'var(--success)' },
 	danger:			{ value: '#FF0039',			key: '--danger',		label: 'var(--danger)' },
 	warning:		{ value: '#C5FF4B',			key: '--warning',		label: 'var(--warning)' },
 	info:			{ value: '#17a2b8',			key: '--info',			label: 'var(--info)' },
@@ -38,11 +38,10 @@ const BasicVar = {
 	font2:			{ value: 'TacticRound',			key: '--font2', 				label: 'var(--font2)' },
 	font3:			{ value: 'Stigo',				key: '--font3', 				label: 'var(--font3)' },
 	lineH:			{ value: '', 					key: '--line-height', 			label: 'var(--line-height)' },
-	bg:				{ value: '#000000', 			key: '--bg', 					label: 'var(--bg)' },
-	bg2:			{ value: '#1D202D', 			key: '--bg2', 					label: 'var(--bg2)' },
-	bgCard:			{ value: 'rgba(7, 8, 15, 0.35)', key: '--bg-card', 				label: 'var(--bg-card)' },
-	bgOpacity:		{ value: 'rgba(7, 8, 15, 0.6)', key: '--bg-opacity', 			label: 'var(--bg-opacity)' },
-	bgBadge:		{ value: '#FFCC00', 			key: '--bg-badge', 				label: 'var(--bg-badge)' },
+	bg:				{ value: '#1A1428', 			key: '--bg', 					label: 'var(--bg)' },
+	bg2:			{ value: '#1B1C2D', 			key: '--bg2', 					label: 'var(--bg2)' },
+	bgCard:			{ value: '1F2630', 				key: '--bg-card', 				label: 'var(--bg-card)' },
+	bgOpacity:		{ value: 'rgba(0, 0, 0, 0.5)',	key: '--bg-opacity', 			label: 'var(--bg-opacity)' },
 	bgInput:		{ value: '#171C23', 			key: '--bg-input', 				label: 'var(--bg-input)' },
 	color:			{ value: '#ffffff', 			key: '--color', 				label: 'var(--color)' },
 	color2:			{ value: '#9E9E9E', 			key: '--color2', 				label: 'var(--color2)' },
@@ -81,6 +80,14 @@ const FontStyle = {
 export const AsideVar = {
 	w:				{ value: '350px',					key: '--aside-width',			label: 'var(--aside-width)' },
 	tabletW:		{ value: '80px',					key: '--aside-tabletW',			label: 'var(--aside-tabletW)' }
+}
+
+export const HeaderVar = {
+	h:				{ value: '100px',					key: '--header-width',			label: 'var(--header-width)' },
+}
+
+export const ChatboxVar = {
+	w:				{ value: '250px',					key: '--chatbox-width',			label: 'var(--chatbox-width)' },
 }
 
 export {

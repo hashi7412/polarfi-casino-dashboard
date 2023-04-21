@@ -5,19 +5,21 @@ import FBox from "elements/fbox";
 
 interface ButtonProps extends BoxPropsType {
 	children?: any
+	bg?: 'light' | 'black' | 'light' | 'dark' | 'primary' | 'success' | 'danger' | 'warning' | 'info'
+	color?: 'light' | 'black'
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
+const Button: React.FC<ButtonProps> = ({ children, bg, color, ...rest }) => {
 	return (
 		<FBox
 			valign={'center'}
 			hAlign={'center'}
 			as={'button'}
 			g={'0.5rem'}
-			p={'0.8rem 1.5rem'}
-			bg={DefaultColor.warning.label}
-			bdradius={BasicVar.bRadius1.label}
-			color={DefaultColor.black.label}
+			p={'0.7rem 2rem'}
+			bg={DefaultColor[bg || 'primary'].label}
+			bdradius={BasicVar.bRound.label}
+			color={DefaultColor[color || 'light'].label}
 			{...rest}
 		>
 			{children}
