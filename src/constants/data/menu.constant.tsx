@@ -9,31 +9,31 @@ const _MENUITEMS: CategoryItemType[] = [
         badge: ""
     },
     {
-        label: "My NFTs",
-        icon: <Icon icon="Gallery" />,
-        link: "my-nfts",
-        key: "mynft",
+        label: "Casino Games",
+        icon: <Icon icon="Game" />,
+        link: "casino-games",
+        key: "casino-games",
         badge: ""
     },
     {
-        label: "Transaction",
-        icon: <Icon icon="Receipt" />,
-        link: "tx",
-        key: "tx",
+        label: "Top Up Balance",
+        icon: <Icon icon="Topup" />,
+        link: "top-up",
+        key: "top-up",
         badge: ""
     },
     {
-        label: "DAO",
-        icon: <Icon icon="StrongBox" />,
-        link: "dao",
-        key: "dao",
+        label: "Setting",
+        icon: <Icon icon="Setting" />,
+        link: "setting",
+        key: "setting",
         badge: ""
     },
     {
-        label: "Staking",
-        icon: <Icon icon="Lock" />,
-        link: "staking",
-        key: "staking",
+        label: "Log out",
+        icon: <Icon icon="Logout" />,
+        link: "logout",
+        key: "logout",
         badge: ""
     }
 ]

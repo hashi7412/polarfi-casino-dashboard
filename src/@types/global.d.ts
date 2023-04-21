@@ -4,9 +4,17 @@ declare module "*.png";
 declare module "*.jpg";
 declare module "*.svg";
 
+declare interface UserObject {
+	token:				string
+	id:					string
+	name:				string
+	avatar:				string
+}
+
 declare interface StoreObject {
 	lang:				string
 	theme:				'dark' | 'light'
+	user:				UserObject | null
 }
 
 declare interface CSSInlineStyleType {

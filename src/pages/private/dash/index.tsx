@@ -3,19 +3,28 @@ import { Outlet } from "react-router-dom";
 import { Box } from "elements";
 import FBox from "elements/fbox";
 import Sidebar from "components/dash/sidebar";
+import Header from "components/dash/header";
+import ChatBox from "components/chat";
 
 const DashLayout = () => {
     return (
         <FBox h={'100vh'}>
             <Sidebar />
-            <Box
+            <FBox
                 flex={1}
-                minH={'100%'}
-                p={'2rem 1rem 0'}
-                overflow={'auto'}
             >
-                <Outlet />
-            </Box>
+                <FBox
+                    flex={1}
+                    fDir={'column'}
+                    overflow={'auto'}
+                >
+                    <Header />
+                    <Box flex={1}>
+                        <Outlet />
+                    </Box>
+                </FBox>
+                <ChatBox />
+            </FBox>
         </FBox>
     )
 }

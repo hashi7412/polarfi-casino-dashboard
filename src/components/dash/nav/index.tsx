@@ -18,9 +18,9 @@ const NavItem: React.FC<NavItemProps> = ({ children, to, active, badge }) => (
 		<Link
 			to={to}
 			p={'1rem 1.5rem'}
-			bdradius={'0.8rem'}
+			bdradius={BasicVar.bRound.label}
 			color={active ? BasicVar.color.label : BasicVar.color2.label}
-			bg={active ? BasicVar.bg2.label : 'transparent'}
+			bg={active ? 'linear-gradient(101.05deg, rgba(88, 209, 182, 0.3) -5.36%, rgba(45, 81, 67, 0.3) 29.46%, rgba(36, 88, 67, 0.3) 56.03%, rgba(88, 209, 182, 0.3) 81.92%)' : 'transparent'}
 			w={'100%'}
 			transition={'all ease-in-out .2s'}
 		>
