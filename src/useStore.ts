@@ -2,6 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 import config from 'config.json';
 
+export const getDate = (time: number) => {
+	const d = new Date(time);
+	let timeStr = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+	return timeStr;
+}
+
 const langs:any = {
 	"en-US": require("lang/en-US.json")
 }

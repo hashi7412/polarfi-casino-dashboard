@@ -1,36 +1,36 @@
 import { createGlobalStyle } from "styled-components";
-import { AsideVar, BasicVar, ChatboxVar, DefaultColor, DeviceWidth, FontSize, FontStyle, HeaderVar } from "./variables";
+import { AsideVar, BasicVar, ChatboxVar, DefaultColor, DeviceWidth, FontSize, FontStyle, HeaderVar, styledShadow } from "./variables";
 import { setVariable } from "utils/style.utils";
-import TacticRound from "assets/font/tactic-round/TacticRound-Bld.ttf";
+import ArefRuqaa from "assets/font/aref-ruqaa/ArefRuqaa-Regular.ttf";
 import Gilroy from "assets/font/gilroy/Gilroy-Regular.ttf";
 import GilroyMedium from "assets/font/gilroy/Gilroy-Medium.ttf";
-import Stigo from "assets/font/stigo/StigoThin.ttf";
+import TitanOne from "assets/font/titan-one/TitanOne-Regular.ttf";
 
 const GlobalStyle = createGlobalStyle`
 	@font-face {
-        font-family: 'Gilroy';
+        font-family: ${BasicVar.font1.value};
         src: url(${Gilroy});
         font-weight: ${FontStyle.normal.value};
         font-style: normal;
     }
 
 	@font-face {
-		font-family: 'Gilroy';
+		font-family: ${BasicVar.font1.value};
 		src: url(${GilroyMedium});
 		font-weight: ${FontStyle.bold.value};
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: 'TacticRound';
-		src: url(${TacticRound});
+		font-family: ${BasicVar.font3.value};
+		src: url(${ArefRuqaa});
 		font-weight: ${FontStyle.normal.value};
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: 'Stigo';
-		src: url(${Stigo});
+		font-family: ${BasicVar.font2.value};
+		src: url(${TitanOne});
 		font-weight: ${FontStyle.normal.value};
 		font-style: normal;
 	}
@@ -118,15 +118,17 @@ const GlobalStyle = createGlobalStyle`
 
 	&::-webkit-scrollbar-track {
 		background: rgba(255, 255, 255, 0.1);
+		border-radius: 5px;
+		box-shadow: ${styledShadow};
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background: #999;
+		background: ${BasicVar.bg2.label};
 		border-radius: 5px;
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
-		background: #888;
+		background: ${BasicVar.bg.label};
 	}
 `
 

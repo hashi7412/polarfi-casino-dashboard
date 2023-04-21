@@ -16,12 +16,14 @@ const DashLayout = () => {
                 <FBox
                     flex={1}
                     fDir={'column'}
-                    overflow={'auto'}
+                    overflow={'hidden'}
                 >
                     <Header />
                     <Box
                         flex={1}
                         p={'0 2rem'}
+                        mr={'0.5rem'}
+                        overflow={'auto'}
                     >
                         <Outlet />
                     </Box>

@@ -1,3 +1,6 @@
+
+// Global Variables
+
 const DefaultColor = {
 	white:			{ value: '#ffffff',			key: '--white',			label: 'var(--white)' },
 	black:			{ value: '#000000',			key: '--black',			label: 'var(--black)' },
@@ -32,24 +35,24 @@ export const device = {
 	desktopL:		`(max-width: ${DeviceWidth.desktop.value})`
 };
 
-// basic variables
+// Basic Variables
 const BasicVar = {
 	font1:			{ value: 'Gilroy',		 		key: '--font1', 				label: 'var(--font1)' },
-	font2:			{ value: 'TacticRound',			key: '--font2', 				label: 'var(--font2)' },
-	font3:			{ value: 'Stigo',				key: '--font3', 				label: 'var(--font3)' },
+	font2:			{ value: 'Tital-One',			key: '--font2', 				label: 'var(--font2)' },
+	font3:			{ value: 'ArefRuqaa',			key: '--font3', 				label: 'var(--font3)' },
 	lineH:			{ value: '', 					key: '--line-height', 			label: 'var(--line-height)' },
 	bg:				{ value: '#1A1428', 			key: '--bg', 					label: 'var(--bg)' },
 	bg2:			{ value: '#1B1C2D', 			key: '--bg2', 					label: 'var(--bg2)' },
-	bgCard:			{ value: '#1F2630', 				key: '--bg-card', 				label: 'var(--bg-card)' },
+	bgCard:			{ value: '#1F2630', 			key: '--bg-card', 				label: 'var(--bg-card)' },
 	bgOpacity:		{ value: 'rgba(0, 0, 0, 0.5)',	key: '--bg-opacity', 			label: 'var(--bg-opacity)' },
 	bgInput:		{ value: '#171C23', 			key: '--bg-input', 				label: 'var(--bg-input)' },
 	color:			{ value: '#ffffff', 			key: '--color', 				label: 'var(--color)' },
-	color2:			{ value: '#727476', 			key: '--color2', 				label: 'var(--color2)' },
+	color2:			{ value: '#5e7185', 			key: '--color2', 				label: 'var(--color2)' },
 	color3:			{ value: '#ffffff88', 			key: '--color3', 				label: 'var(--color3)' },
 	border:			{ value: '#ffffff40', 			key: '--border', 				label: 'var(--border)' },
 	border2:		{ value: '#54597C', 			key: '--border2', 				label: 'var(--border2)' },
 
-	bRadius1:		{ value: '1rem',				key: '--bradius1',				label: 'var(--bradius1)' },
+	bRadius1:		{ value: '0.5rem',				key: '--bradius1',				label: 'var(--bradius1)' },
 	bRadius2:		{ value: '2rem',				key: '--bradius2',				label: 'var(--bradius2)' },
 	bRadius3:		{ value: '1.5rem',				key: '--bradius3',				label: 'var(--bradius3)' },
 	bRound:			{ value: '100rem',				key: '--bRound',				label: 'var(--bRound)' },
@@ -77,8 +80,8 @@ const FontStyle = {
 
 export const styledShadow = '0px 0px 10px rgba(0, 0, 0, 0.5)';
 
-// custom variables
-// dashboard custom variables
+// Custom Variables
+
 export const AsideVar = {
 	w:				{ value: '250px',					key: '--aside-width',			label: 'var(--aside-width)' },
 	tabletW:		{ value: '80px',					key: '--aside-tabletW',			label: 'var(--aside-tabletW)' }
