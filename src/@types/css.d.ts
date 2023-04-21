@@ -61,10 +61,12 @@ declare type BgSizeType						= CSSOriginType | 'contain' | 'cover' | 'auto'
 declare type BackdropFilterType             = CSSOriginType | 'none' | string
 
 declare type BorderType						= CSSOriginType | string
+declare type OutlineType					= CSSOriginType | string
 
 declare type BorderRadiusType               = CSSOriginType | string
 
 declare type BoxShadowType                  = CSSOriginType | string
+declare type TextShadowType                 = CSSOriginType | string
 
 declare type OverflowType					= CSSOriginType | 'auto' | 'hidden' | 'overflow-y' | 'overflow-x'
 

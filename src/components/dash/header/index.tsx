@@ -5,46 +5,104 @@ import Text from "elements/text";
 import Button from "components/btn";
 import { Logo2 } from "elements/logo";
 import { FontStyle } from "styles/variables";
+import { Box } from "elements";
+import Img from "elements/img";
+import Icon from "components/icon";
 
 const Header = () => {
 	return (
 		<FBox
 			valign={'center'}
-			hAlign={'center'}
 			h={HeaderVar.h.label}
+			p={'0 1.5rem'}
 		>
 			<FBox
-				valign={'center'}
-				hAlign={'space-between'}
-				g={'1rem'}
-				minW={'20rem'}
-				p={'0.5rem 0.7rem'}
-				bg={BasicVar.bg2.label}
-				bdradius={BasicVar.bRound.label}
+				flex={1}
+				hAlign={'center'}
 			>
 				<FBox
-					flex={1}
 					valign={'center'}
-					g={'0.5rem'}
+					hAlign={'space-between'}
+					g={'1rem'}
+					minW={'20rem'}
+					p={'0.5rem 0.7rem'}
+					bg={BasicVar.bg2.label}
+					bdradius={BasicVar.bRound.label}
 				>
-					<Logo2 w="1.8rem" h="1.8rem" />
 					<FBox
+						flex={1}
 						valign={'center'}
 						g={'0.5rem'}
 					>
-						<Text
-							fWeight={FontStyle.bold.label}
+						<Logo2 w="1.8rem" h="1.8rem" />
+						<FBox
+							valign={'center'}
+							g={'0.5rem'}
 						>
-							1,000,000
-						</Text>
-						<Text
-							color={DefaultColor.success.label}
-						>
-							POL
-						</Text>
+							<Text
+								fWeight={FontStyle.bold.label}
+							>
+								1,000,000
+							</Text>
+							<Text
+								color={DefaultColor.success.label}
+							>
+								POL
+							</Text>
+						</FBox>
 					</FBox>
+					<Button>Wallet</Button>
 				</FBox>
-				<Button>Wallet</Button>
+			</FBox>
+			<FBox
+				valign={'center'}
+			>
+				<FBox
+					valign={'center'}
+					g={'0.5rem'}
+					bg={BasicVar.bg2.label}
+					bdradius={BasicVar.bRound.label}
+					p={'0.5rem 1rem 0.5rem 0.5rem'}
+				>
+					<FBox>
+						<Box
+							w={'40px'}
+							h={'40px'}
+							bdradius={BasicVar.bRound.label}
+							overflow={'hidden'}
+							bd={`1px solid ${BasicVar.color.label}`}
+						>
+							<Img w={'40px'} h={'40px'} src={'/avatar.png'} />
+						</Box>
+					</FBox>
+					<Text
+						color={BasicVar.color2.label}
+					>Nickname</Text>
+				</FBox>
+				<Box
+					as={'button'}
+					bg={'none'}
+					bd={'none'}
+					otl={'none'}
+				>
+					<Icon
+						width="2rem"
+						height="2rem"
+						icon="Notification"
+					/>
+				</Box>
+				<Box
+					as={'button'}
+					bg={'none'}
+					bd={'none'}
+					otl={'none'}
+				>
+					<Icon
+						width="2rem"
+						height="2rem"
+						icon="Chat"
+					/>
+				</Box>
 			</FBox>
 		</FBox >
 	)

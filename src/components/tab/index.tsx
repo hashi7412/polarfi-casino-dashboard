@@ -38,7 +38,7 @@ const Tab: React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) 
                         transition={'all ease-in-out .2s'}
                     >
                         <Text
-                            color={activeKey === key ? DefaultColor.white.label : BasicVar.border2.label}
+                            color={activeKey === key ? DefaultColor.white.label : BasicVar.color2.label}
                         >
                             {item.label}
                         </Text>

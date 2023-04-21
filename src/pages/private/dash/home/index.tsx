@@ -6,7 +6,7 @@ import FBox from "elements/fbox";
 import Heading from "elements/heading";
 import Text from "elements/text";
 import React from "react";
-import { FontSize } from "styles/variables";
+import { BasicVar, DefaultColor, FontSize } from "styles/variables";
 
 const items: CategoryItemType[] = [
     { label: "My Bets", key: 'mybets' },
@@ -32,7 +32,7 @@ const DashHome = () => {
                     fDir={'column'}
                     hAlign={'center'}
                     valign={'flex-start'}
-                    g={'0.5rem'}
+                    g={'1rem'}
                     h={'100%'}
                     w={'70%'}
                     p={'0 2rem'}
@@ -42,14 +42,26 @@ const DashHome = () => {
                         level={1}
                         mb={'0'}
                         fSize={FontSize.fSize2.label}
+                        fFamily={BasicVar.font2.label}
                     >
-                        Welcome to {" "}
-                        <Text>
+                        <Text
+                            color={DefaultColor.primary.label}
+                            txtTrans={'uppercase'}
+                            tShadow={`0 0 2px ${DefaultColor.black.value}`}
+                        >
+                            Welcome to &nbsp;
+                        </Text>
+                        <Text
+                            color={DefaultColor.warning.label}
+                            txtTrans={'uppercase'}
+                            tShadow={`0 0 2px ${DefaultColor.black.value}`}
+                        >
                             Polarfi Jackpot
                         </Text>
                     </Heading>
                     <Text
                         mb={'0'}
+                        maxW={'400px'}
                     >
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor
                     </Text>

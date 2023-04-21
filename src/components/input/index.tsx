@@ -1,22 +1,29 @@
 import React from "react";
-import { InputWrapper, StyledInput } from "./styles/input.styled";
-import Text from "elements/text";
-import { BasicVar } from "styles/variables";
+import FBox from "elements/fbox";
+import { BasicVar, styledShadow } from "styles/variables";
+import Box, { BoxPropsType } from "elements/box";
 
-interface InputType {
-    value?: string | number
-    prefix?: string,
-    disabled?: boolean
+interface InputProps extends BoxPropsType {
+    icon?: any
 }
 
-const Input = ({ prefix, disabled, ...rest }: InputType) => {
+const Input = ({ icon, ...rest }: InputProps) => {
     return (
-        <InputWrapper disabled={disabled || false}>
-            {prefix && (
-                <Text color={BasicVar.color2.label} mr={'0.5rem'}>{prefix}</Text>
-            )}
-            <StyledInput {...rest} />
-        </InputWrapper>
+        <FBox
+            w={'100%'}
+            p={'1rem'}
+            bg={BasicVar.bgCard.label}
+            bdradius={BasicVar.bRound.label}
+            bShadow={styledShadow}
+        >
+            <Box
+                as={'input'}
+                bd={'none'}
+                bg={'none'}
+                {...rest}
+            />
+            {rest.icon}
+        </FBox>
     )
 }
 

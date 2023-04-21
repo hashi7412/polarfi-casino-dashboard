@@ -5,10 +5,10 @@ declare module "*.jpg";
 declare module "*.svg";
 
 declare interface UserObject {
-	token:				string
-	id:					string
-	name:				string
-	avatar:				string
+	token?:				string
+	userame:			string
+	name?:				string
+	avatar?:			string | any
 }
 
 declare interface StoreObject {
@@ -91,8 +91,14 @@ declare interface CSSInlineStyleType {
 	bdr?:				BorderType
 	bdb?:				BorderType
 	bdl?:				BorderType
+	otl?:				OutlineType
+	otlt?:				OutlineType
+	otlr?:				OutlineType
+	otlb?:				OutlineType
+	otll?:				OutlineType
 	bdradius?:			BoxShadowType
 	bShadow?:			BorderShadowType
+	tShadow?:			TextShadowType
 	overflow?:			OverflowType
 	overflowX?:			OverflowType
 	overflowY?:			OverflowType
@@ -126,4 +132,6 @@ declare interface ElementEventType {
 	onChange?:			() => void
 }
 
-declare interface ElementDefaultProps extends CSSResponsiveStyleType, HTMLAttributes, ElementEventType, any {}
+declare interface ElementDefaultProps extends CSSResponsiveStyleType, HTMLAttributes, ElementEventType {
+	[key: string]: any
+}

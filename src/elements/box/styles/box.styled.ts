@@ -73,6 +73,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.bdr			? `border-right: ${styles.bdr};`				: ``}
 		${styles.bdradius		? `border-radius: ${styles.bdradius};`			: ``}
 		${styles.bShadow		? `box-shadow: ${styles.bShadow};`				: ``}
+		${styles.tShadow		? `text-shadow: ${styles.tShadow};`				: ``}
 		${styles.clipPath		? `clip-path: ${styles.clipPath};`				: ``}
 		${styles.transition		? `transition: ${styles.transition};`			: ``}
 		${styles.cursor			? `cursor: ${styles.cursor};`					: ``}
@@ -86,6 +87,8 @@ export const setPseudoStyle = ({ after, before, hover, active, other, ...rest }:
 
 		${after ? `&:after { ${setStyle(after)} }` : ``}
 		${before ? `&:before { ${setStyle(before)} }` : ``}
+		${hover ? `&:hover { ${setStyle(hover)} }` : ``}
+		${active ? `&:active { ${setStyle(active)} }` : ``}
 		${other ? other : ``}
 	`
 }
