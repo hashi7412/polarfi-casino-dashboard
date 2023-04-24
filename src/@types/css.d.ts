@@ -7,6 +7,8 @@ declare type PositionType					= CSSOriginType | 'absolute' | 'fixed' | 'relative
 declare type ZIndexType						= CSSOriginType | 'auto' | number
 declare type PosType						= CSSOriginType | UnitValType | 'auto'
 
+declare type TransformType					= CSSOriginType | string
+
 declare type DisplayType					= CSSOriginType | 'block' | 'inline' | 'inline-block' | 'none' | 'flex' | 'inline-flex' | 'grid' | 'inline-grid' | 'flow-root' | 'contents' | 'table' | 'inline-table' | 'table-row' | 'table-row-group' | 'table-caption' | 'table-cell' | 'table-column' | 'table-column-group' | 'table-footer-group' | 'table-header-group' | 'list-item' | 'block flow' | 'inline flow' | 'inline flow-root' | 'block flex' | 'inline flex' | 'block grid' | 'inline grid' | 'block flow-root'
 
 declare type FlexType						= CSSOriginType | 'auto' | 'none' | 'min-content' | number | string

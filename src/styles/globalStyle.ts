@@ -46,27 +46,6 @@ const GlobalStyle = createGlobalStyle`
 		${setVariable(ChatboxVar)}
 	}
 
-	html {
-	}
-
-
-	body {
-		margin: 0;
-		background: ${BasicVar.bg.label};
-		background-size: 120% 140%;
-		background-position: 25% 100%;
-		overflow: hidden;
-    	user-select: none;
-
-		box-sizing: border-box;
-		font-family: ${BasicVar.font1.label};
-		line-height: ${BasicVar.lineH.label};
-		font-size: ${FontSize.fSize.label};
-		color: ${BasicVar.color.label};
-		-ms-text-size-adjust: 100%;
-		-webkit-text-size-adjust: 100%;
-	}
-
 	*, *:before, *:after {
 		box-sizing: inherit;
 		font-family: inherit;
@@ -74,6 +53,23 @@ const GlobalStyle = createGlobalStyle`
 		line-height: inherit;
 		text-transform: inherit;
 		color: inherit;
+	}
+
+	body {
+		margin: 0;
+		background: ${BasicVar.bg.label};
+		background-size: 120% 140%;
+		background-position: 25% 100%;
+		overflow: hidden;
+    	/* user-select: none; */
+
+		box-sizing: border-box !important;
+		font-family: ${BasicVar.font1.label} !important;
+		line-height: ${BasicVar.lineH.label} !important;
+		font-size: ${FontSize.fSize.label} !important;
+		color: ${BasicVar.color.label} !important;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
 	}
 
 	#root {
@@ -108,6 +104,10 @@ const GlobalStyle = createGlobalStyle`
 
 	input {
 		min-width: 0;
+	}
+
+	table, td, th {
+		border-collapse: collapse;
 	}
 
 	&::-webkit-scrollbar {

@@ -22,7 +22,7 @@ const Tab: React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) 
                 g={'0.5rem'}
                 p={'0.5rem'}
                 mb={'1.5rem'}
-                bg={BasicVar.bgCard.label}
+                bg={'linear-gradient(101.05deg, rgba(88, 209, 182, 0.3) -5.36%, rgba(45, 81, 67, 0.3) 29.46%, rgba(36, 88, 67, 0.3) 56.03%, rgba(88, 209, 182, 0.3) 81.92%)'}
                 bdradius={BasicVar.bRound.label}
             >
                 {items.map((item, key) => (

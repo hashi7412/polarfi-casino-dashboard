@@ -7,7 +7,7 @@ import { Box } from "elements";
 import Img from "elements/img";
 import Text from "elements/text";
 import Input from "components/input";
-import { getDate } from "useStore";
+import useStore, { getDate } from "useStore";
 
 interface MessageType {
     account: UserObject
@@ -56,14 +56,27 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
 }
 
 const ChatBox = () => {
-    return (
+    const { isChat, update } = useStore();
+    const [isShow, setIsShow] = React.useState<boolean>(isChat);
+
+    React.useEffect(() => {
+        if (isChat === true) {
+            setIsShow(true);
+        } else {
+            setTimeout(() => { setIsShow(false) }, 200)
+        }
+    }, [isChat])
+
+    return true ? (
         <FBox
+            transform={isChat ? `translate(0, 0)` : `translate(${ChatboxVar.w.value}, 0)`}
             fDir={'column'}
-            maxW={ChatboxVar.w.label}
+            h={'100vh'}
             bg={BasicVar.bg2.label}
+            maxW={isShow ? ChatboxVar.w.label : '0px'}
             bShadow={styledShadow}
             overflow={'hidden'}
-            h={'100vh'}
+            transition={'transform ease-in-out .2s'}
         >
             <FBox
                 valign={'center'}
@@ -80,7 +93,16 @@ const ChatBox = () => {
                 >
                     Chat
                 </Heading>
-                <Icon icon="Cancel" />
+                <Box
+                    as={'button'}
+                    bg={'none'}
+                    bd={'none'}
+                    otl={'none'}
+                    p={'0'}
+                    onClick={() => update({ isChat: !isChat })}
+                >
+                    <Icon icon="Cancel" />
+                </Box>
             </FBox>
             <FBox
                 flex={1}
@@ -97,10 +119,15 @@ const ChatBox = () => {
                 p={'2rem 1rem 1rem'}
                 fFamily={BasicVar.font3.label}
             >
-                <Input placeholder={'Your Message'} />
+                <Input
+                    placeholder={'Your Message'}
+                    rightSide={(
+                        <Icon icon={'Send'} fill={BasicVar.color2.label} />
+                    )}
+                />
             </FBox>
         </FBox>
-    )
+    ) : null
 }
 
 export default ChatBox

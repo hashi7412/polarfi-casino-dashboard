@@ -15,6 +15,8 @@ declare interface StoreObject {
 	lang:				string
 	theme:				'dark' | 'light'
 	user:				UserObject | null
+	isChat:				boolean,
+	isMobileNav:		boolean
 }
 
 declare interface CSSInlineStyleType {
@@ -25,6 +27,7 @@ declare interface CSSInlineStyleType {
 	right?:				PosType
 	bottom?:			PosType
 	left?:				PosType
+	transform?:			TransformType
 	dplay?:				DisplayType
 	flex?:				FlexType
 	fBasis?:			FlexBasisType
