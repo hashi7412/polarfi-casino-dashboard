@@ -8,8 +8,11 @@ import { FontStyle } from "styles/variables";
 import { Box } from "elements";
 import Img from "elements/img";
 import Icon from "components/icon";
+import useStore from "useStore";
 
 const Header = () => {
+	const { isChat, update } = useStore();
+
 	return (
 		<FBox
 			valign={'center'}
@@ -56,6 +59,7 @@ const Header = () => {
 			</FBox>
 			<FBox
 				valign={'center'}
+				g={'1rem'}
 			>
 				<FBox
 					valign={'center'}
@@ -79,30 +83,42 @@ const Header = () => {
 						color={BasicVar.color2.label}
 					>Nickname</Text>
 				</FBox>
-				<Box
-					as={'button'}
-					bg={'none'}
-					bd={'none'}
-					otl={'none'}
+				<FBox
 				>
-					<Icon
-						width="2rem"
-						height="2rem"
-						icon="Notification"
-					/>
-				</Box>
-				<Box
-					as={'button'}
-					bg={'none'}
-					bd={'none'}
-					otl={'none'}
-				>
-					<Icon
-						width="2rem"
-						height="2rem"
-						icon="Chat"
-					/>
-				</Box>
+					<Box
+						as={'button'}
+						bg={'none'}
+						bd={'none'}
+						otl={'none'}
+						color={BasicVar.color2.label}
+						hover={{
+							color: BasicVar.color.label
+						}}
+					>
+						<Icon
+							width="2rem"
+							height="2rem"
+							icon="Notification"
+						/>
+					</Box>
+					<Box
+						as={'button'}
+						bg={'none'}
+						bd={'none'}
+						otl={'none'}
+						onClick={() => update({ isChat: !isChat })}
+						color={isChat ? BasicVar.color.label : BasicVar.color2.label}
+						hover={{
+							color: BasicVar.color.label
+						}}
+					>
+						<Icon
+							width="2rem"
+							height="2rem"
+							icon="Chat"
+						/>
+					</Box>
+				</FBox>
 			</FBox>
 		</FBox >
 	)

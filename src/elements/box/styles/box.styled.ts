@@ -10,6 +10,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.left			? `left: ${styles.left};`						: ``}
 		${styles.bottom			? `bottom: ${styles.bottom};`					: ``}
 		${styles.right			? `right: ${styles.right};`						: ``}
+		${styles.transform		? `transform: ${styles.transform};`				: ``}
 		${styles.flex			? `flex: ${styles.flex};`						: ``}
 		${styles.justifySelf	? `justify-self: ${styles.justifySelf};`		: ``}
 		${styles.justifyItems	? `justify-items: ${styles.justifyItems};`		: ``}
@@ -63,6 +64,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.bgPoxY			? `background-position-y: ${styles.bgPoxY};`	: ``}
 		${styles.bgRepeat		? `background-repeat: ${styles.bgRepeat};`		: ``}
 		${styles.bgSize			? `background-size: ${styles.bgSize};`			: ``}
+		${styles.backdrop		? `backdrop-filter: ${styles.backdrop};`		: ``}
 		${styles.overflow		? `overflow: ${styles.overflow};`				: ``}
 		${styles.overflowX		? `overflow-x: ${styles.overflowX};`			: ``}
 		${styles.overflowY		? `overflow-y: ${styles.overflowY};`			: ``}
@@ -71,6 +73,11 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.bdb			? `border-bottom: ${styles.bdb};`				: ``}
 		${styles.bdl			? `border-left: ${styles.bdl};`					: ``}
 		${styles.bdr			? `border-right: ${styles.bdr};`				: ``}
+		${styles.otl			? `outline: ${styles.otl};`						: ``}
+		${styles.otlt			? `outline-top: ${styles.otlt};`					: ``}
+		${styles.otlb			? `outline-bottom: ${styles.otlb};`				: ``}
+		${styles.otll			? `outline-left: ${styles.otll};`				: ``}
+		${styles.otlr			? `outline-right: ${styles.otlr};`				: ``}
 		${styles.bdradius		? `border-radius: ${styles.bdradius};`			: ``}
 		${styles.bShadow		? `box-shadow: ${styles.bShadow};`				: ``}
 		${styles.tShadow		? `text-shadow: ${styles.tShadow};`				: ``}

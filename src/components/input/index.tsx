@@ -1,28 +1,44 @@
 import React from "react";
 import FBox from "elements/fbox";
-import { BasicVar, styledShadow } from "styles/variables";
+import { BasicVar } from "styles/variables";
 import Box, { BoxPropsType } from "elements/box";
 
 interface InputProps extends BoxPropsType {
-    icon?: any
+    rightSide?: any
+    value?: string | number
+    onChange?: any
+    placeholder?: string
 }
 
-const Input = ({ icon, ...rest }: InputProps) => {
+const Input = ({
+    rightSide,
+    value,
+    onChange,
+    placeholder,
+    ...rest
+}: InputProps) => {
     return (
         <FBox
+            g={'0.5rem'}
             w={'100%'}
-            p={'1rem'}
+            p={'1rem 1.5rem'}
+            valign={'center'}
             bg={BasicVar.bgCard.label}
             bdradius={BasicVar.bRound.label}
-            bShadow={styledShadow}
+            {...rest}
         >
             <Box
                 as={'input'}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                flex={1}
+                minW={'0'}
                 bd={'none'}
                 bg={'none'}
-                {...rest}
+                otl={'none'}
             />
-            {rest.icon}
+            {rightSide ? rightSide : null}
         </FBox>
     )
 }

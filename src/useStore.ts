@@ -8,14 +8,16 @@ export const getDate = (time: number) => {
 	return timeStr;
 }
 
-const langs:any = {
+const langs: any = {
 	"en-US": require("lang/en-US.json")
 }
 
-const initialState:StoreObject = {
+const initialState: StoreObject = {
 	lang: "en-US",
 	theme: "dark",
-	user: null
+	user: null,
+	isChat: false,
+	isMobileNav: false
 };
 
 const getStore = (initialState: StoreObject) => {
@@ -49,12 +51,12 @@ export const slice = createSlice({
 	name: 'store',
 	initialState: getStore(initialState),
 	reducers: {
-		update: (state: any, action: any) => {
+		update: (state: any, action) => {
 			for (const k in action.payload) {
-				if (state[k] === undefined) new Error(`Undefined store key ${k}`);
-				state[k] = action.payload[k];
+				if (state[k] === undefined) new Error(`undefined store key ${k}`)
+				state[k] = action.payload[k]
 			}
-			setStore(state);
+			setStore(state)
 		}
 	}
 })
@@ -62,20 +64,20 @@ export const slice = createSlice({
 const useStore = () => {
 	const G = useSelector((state: StoreObject) => state);
 	const L = langs[G.lang];
-	
-	const T = (key:string, args?:{[key:string]:string|number}|string|number):string => {
+
+	const T = (key: string, args?: { [key: string]: string | number } | string | number): string => {
 		let text = L[key]
 		if (text === undefined) throw new Error('Undefined lang key[' + key + ']')
 		if (typeof args === 'string' || typeof args === 'number') {
 			text = text.replace(/\{\w+\}/, String(args))
-		} else if (args){
-			for(let k in args) text = text.replace(new RegExp('{'+k+'}', 'g'), String(args[k]))
+		} else if (args) {
+			for (let k in args) text = text.replace(new RegExp('{' + k + '}', 'g'), String(args[k]))
 		}
 		return text
 	}
 
 	const dispatch = useDispatch();
-	const update = (payload: Partial<StoreObject & void> & void) => dispatch(slice.actions.update(payload));
+	const update = (payload: Partial<StoreObject>) => dispatch(slice.actions.update(payload))
 
 	return { ...G, T, update }
 }
