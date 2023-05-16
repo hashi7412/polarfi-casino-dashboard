@@ -4,6 +4,7 @@ import { BoxWrapper } from './styles/box.styled';
 
 export interface BoxPropsType extends ElementDefaultProps {
     as?: any
+    ref?: any
     children?: any
 }
 

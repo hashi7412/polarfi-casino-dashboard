@@ -5,16 +5,18 @@ import Box, { BoxPropsType } from "elements/box";
 
 interface InputProps extends BoxPropsType {
     rightSide?: any
+    placeholder?: string
     value?: string | number
     onChange?: any
-    placeholder?: string
+    onKeyDown?: any
 }
 
 const Input = ({
     rightSide,
+    placeholder,
     value,
     onChange,
-    placeholder,
+    onKeyDown,
     ...rest
 }: InputProps) => {
     return (
@@ -31,6 +33,7 @@ const Input = ({
                 as={'input'}
                 value={value}
                 onChange={onChange}
+                onKeyDown={onKeyDown}
                 placeholder={placeholder}
                 flex={1}
                 minW={'0'}
