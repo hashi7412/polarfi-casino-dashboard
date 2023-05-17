@@ -33,6 +33,7 @@ const SignInForm = ({ setIsSignin }: PropsType) => {
             <Text alignSelf={'flex-start'} mb={'0.5rem'}>Login with your account</Text>
             <Input
                 placeholder="Username or Email"
+                onKeyDown={(e: KeyboardEvent) => e.key === 'Enter' && submit()}
                 bg={DefaultColor.white.label}
                 color={BasicVar.bg.label}
                 mb={'1rem'}
@@ -40,6 +41,7 @@ const SignInForm = ({ setIsSignin }: PropsType) => {
             <Input
                 type={'password'}
                 placeholder="Password"
+                onKeyDown={(e: KeyboardEvent) => e.key === 'Enter' && submit()}
                 bg={DefaultColor.white.label}
                 color={BasicVar.bg.label}
             />
@@ -52,7 +54,7 @@ const SignInForm = ({ setIsSignin }: PropsType) => {
                 underline
             >Forgot your password</Link>
             <Button
-                onClick={() => { }}
+                onClick={() => submit()}
                 alignSelf={'stretch'}
                 mb={'1rem'}
             >

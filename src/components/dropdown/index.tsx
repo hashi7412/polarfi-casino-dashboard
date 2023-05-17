@@ -28,14 +28,15 @@ const Dropdown: FC<PropsType> = ({ children, thumb, space, ...rest }) => {
                 <Box
                     position={'absolute'}
                     top={'100%'}
+                    w={'100%'}
                     h={space}
                     bg={'transparent'}
                 ></Box>
             )}
             <Box
                 dplay={'none'}
-                top={space ? rest.top : `calc(${rest.top} + ${space})`}
                 {...rest}
+                top={space ? `calc(${rest.top} + ${space})` : rest.top}
             >
                 <Box
                 >
