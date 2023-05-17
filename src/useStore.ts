@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
-// import config from 'config.json';
 
 export const getDate = (time: number) => {
 	const d = new Date(time);
@@ -22,8 +21,7 @@ const initialState: StoreObject = {
 
 const getStore = (initialState: StoreObject) => {
 	try {
-		// const buf = window.localStorage.getItem(config.appKey);
-		const buf = window.localStorage.getItem("sdfsdf");
+		const buf = window.localStorage.getItem(process.env.REACT_APP_KEY || '');
 		if (buf) {
 			const json = JSON.parse(buf);
 			const state: any = initialState;
@@ -44,8 +42,8 @@ const getStore = (initialState: StoreObject) => {
 }
 
 const setStore = (state: any) => {
-	// delete state.L;
-	// window.localStorage.setItem(config.appKey, JSON.stringify(state));
+	delete state.L;
+	window.localStorage.setItem(process.env.REACT_APP_KEY || '', JSON.stringify(state));
 }
 
 export const slice = createSlice({

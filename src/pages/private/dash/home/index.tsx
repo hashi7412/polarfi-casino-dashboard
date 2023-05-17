@@ -7,7 +7,7 @@ import FBox from "elements/fbox";
 import Heading from "elements/heading";
 import Text from "elements/text";
 import React from "react";
-import { BasicVar, DefaultColor, FontSize } from "styles/variables";
+import { BasicVar, DefaultColor, FontSize, styledShadow } from "styles/variables";
 
 const items: CategoryItemType[] = [
 	{ label: "My Bets", key: 'mybets' },
@@ -84,11 +84,12 @@ const DashHome = () => {
 					<Text
 						mb={'0'}
 						maxW={'400px'}
+						tShadow={styledShadow}
 					>
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor
 					</Text>
 					<Button
-						bg={"success"}
+						bg={DefaultColor.success.label}
 					>
 						Deposit
 					</Button>

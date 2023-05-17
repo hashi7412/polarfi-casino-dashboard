@@ -30,7 +30,6 @@ const Modal: React.FC<ModalProps> = ({
             h={'100%'}
         >
             <FBox
-                bg={BasicVar.bgCard.label}
                 {...rest}
             >
                 {children}

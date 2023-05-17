@@ -5,6 +5,7 @@ import ArefRuqaa from "assets/font/aref-ruqaa/ArefRuqaa-Regular.ttf";
 import Gilroy from "assets/font/gilroy/Gilroy-Regular.ttf";
 import GilroyMedium from "assets/font/gilroy/Gilroy-Medium.ttf";
 import TitanOne from "assets/font/titan-one/TitanOne-Regular.ttf";
+import Amita from "assets/font/amita/Amita-Regular.ttf";
 
 const GlobalStyle = createGlobalStyle`
 	@font-face {
@@ -31,6 +32,13 @@ const GlobalStyle = createGlobalStyle`
 	@font-face {
 		font-family: ${BasicVar.font2.value};
 		src: url(${TitanOne});
+		font-weight: ${FontStyle.normal.value};
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: ${BasicVar.font4.value};
+		src: url(${Amita});
 		font-weight: ${FontStyle.normal.value};
 		font-style: normal;
 	}
@@ -80,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	
 	ul {
+		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
@@ -117,13 +126,13 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	&::-webkit-scrollbar-track {
-		background: rgba(255, 255, 255, 0.1);
+		background: ${BasicVar.bg2.label};
 		border-radius: 5px;
 		box-shadow: ${styledShadow};
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background: ${BasicVar.bg2.label};
+		background: rgba(255, 255, 255, 0.1);
 		border-radius: 5px;
 	}
 

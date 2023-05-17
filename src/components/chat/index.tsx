@@ -66,17 +66,21 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
 
 const ChatBox = () => {
     const { isChat, update } = useStore();
-    const { sendMessage, lastMessage, readyState } = useWebSocket(
-        'ws://localhost:4125',
-        {
-            reconnectAttempts: 10,
-            reconnectInterval: 3000
-        }
-    );
+    const didUnmount = useRef(false);
     const [isShow, setIsShow] = useState<boolean>(isChat);
     const [msg, setMsg] = useState<string>('');
     const [msgs, setMsgs] = useState<MessageType[]>([]);
     const msgBoxRef = useRef<HTMLDivElement>(null);
+    const { sendMessage, lastMessage, readyState } = useWebSocket(
+        'ws://localhost:4125',
+        {
+            shouldReconnect: (closeEvent) => {
+                return didUnmount.current === false;
+            },
+            reconnectAttempts: 10,
+            reconnectInterval: 3000
+        }
+    );
 
     const chat = () => {
         const data = {
@@ -86,6 +90,7 @@ const ChatBox = () => {
             msg: msg,
         }
         sendMessage(JSON.stringify(data));
+        setMsg('');
     }
 
     useEffect(() => {
@@ -126,6 +131,12 @@ const ChatBox = () => {
             setTimeout(() => { setIsShow(false) }, 200)
         }
     }, [isChat])
+
+    useEffect(() => {
+        return () => {
+            didUnmount.current = true;
+        };
+    }, []);
 
     return true ? (
         <FBox
@@ -188,10 +199,13 @@ const ChatBox = () => {
                 <Input
                     placeholder={'Your Message'}
                     rightSide={(
-                        <Icon icon={'Send'} fill={BasicVar.color2.label} />
+                        <Box onClick={chat} cursor={'pointer'}>
+                            <Icon icon={'Send'} fill={BasicVar.color2.label} />
+                        </Box>
                     )}
-                    onChange={(e:React.ChangeEvent<HTMLInputElement>) => setMsg(e.target.value)}
-                    onKeyDown={(e:KeyboardEvent) => e.key === 'Enter' && chat()}
+                    value={msg}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMsg(e.target.value)}
+                    onKeyDown={(e: KeyboardEvent) => e.key === 'Enter' && chat()}
                 />
             </FBox>
         </FBox>

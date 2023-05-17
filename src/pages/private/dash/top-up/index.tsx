@@ -2,7 +2,7 @@ import React from "react";
 import FBox from "elements/fbox";
 import Text from "elements/text";
 import Input from "components/input";
-import { BasicVar, FontStyle } from "styles/variables";
+import { BasicVar, DefaultColor, FontStyle } from "styles/variables";
 import { Box } from "elements";
 import Button from "components/btn";
 import Modal from "components/modal";
@@ -43,7 +43,7 @@ const Topup = () => {
                 g={'0.5rem'}
             >
                 <Button
-                    bg={'success'}
+                    bg={DefaultColor.success.label}
                     onClick={() => setIsModal(true)}
                 >
                     Deposit
