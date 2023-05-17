@@ -35,6 +35,7 @@ declare type FontFamilyType					= CSSOriginType | string
 declare type FontSizeType					= CSSOriginType | string
 declare type FontWeightType                 = CSSOriginType | 'light' | 'normal' | 'bold' | 'semi-bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
 declare type ColorType						= CSSOriginType | 'currentcolor' | string
+declare type WordWrapType                   = CSSOriginType | 'normal' | 'break-word'
 
 declare type TextAlignType                  = CSSOriginType | 'center' | 'right' | 'left'
 declare type TextTransformType              = CSSOriginType | 'uppercase' | 'lowercase' | 'capitalize'
