@@ -63,20 +63,20 @@ const DashHome = () => {
 					<Heading
 						level={1}
 						mb={'0'}
-						fSize={FontSize.fSize2.label}
+						fSize={FontSize.fSize1.label}
 						fFamily={BasicVar.font2.label}
 					>
 						<Text
 							color={DefaultColor.primary.label}
 							txtTrans={'uppercase'}
-							tShadow={`0 0 2px ${DefaultColor.black.value}`}
+							tShadow={`0 0 2px #5559`}
 						>
 							Welcome to &nbsp;
 						</Text>
 						<Text
 							color={DefaultColor.warning.label}
 							txtTrans={'uppercase'}
-							tShadow={`0 0 2px ${DefaultColor.black.value}`}
+							tShadow={`0 0 2px #5559`}
 						>
 							Polarfi Jackpot
 						</Text>
