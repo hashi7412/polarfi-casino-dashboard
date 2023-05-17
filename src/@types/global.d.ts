@@ -77,6 +77,7 @@ declare interface CSSInlineStyleType {
 	txtTrans?:			TextTransformType
 	lSpace?:			LetterSpacingType
 	color?:				ColorType
+	wordWrap?:			WordWrapType
 	bgAttachment?:		BgAttachmentType
 	bgBlendMode?:		BgBlendModeType
 	bgClip?:			BgClipType

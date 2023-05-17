@@ -52,6 +52,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.txtTrans		? `text-transform: ${styles.txtTrans};`			: ``}
 		${styles.lSpace			? `letter-spacing: ${styles.lSpace};`			: ``}
 		${styles.color			? `color: ${styles.color};`						: ``}
+		${styles.wordWrap		? `word-wrap: ${styles.wordWrap};`				: ``}
 		${styles.bg				? `background: ${styles.bg};`					: ``}
 		${styles.bgAttachment	? `background-attachment: ${styles.bgAttachment};`: ``}
 		${styles.bgBlendMode	? `background-blend-mode: ${styles.bgBlendMode};`: ``}

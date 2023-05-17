@@ -24,7 +24,7 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
             g={'0.5rem'}
         >
             <Box
-                w={'50px'}
+                minW={'50px'}
                 h={'50px'}
                 bdradius={BasicVar.bRound.label}
                 overflow={'hidden'}
@@ -37,6 +37,7 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
                 bg={BasicVar.bgCard.label}
                 p={'0.5rem 2rem 1rem 1.5rem'}
                 bdradius={BasicVar.bRadius1.label}
+                overflow={'hidden'}
             >
                 <FBox
                     hAlign={'space-between'}
@@ -58,7 +59,7 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
                         {getDate(time ?? 0)}
                     </Text>
                 </FBox>
-                <Text w={'100%'}>{msg}</Text>
+                <Text w={'100%'} wordWrap={'break-word'}>{msg}</Text>
             </Box>
         </FBox>
     )
@@ -144,7 +145,8 @@ const ChatBox = () => {
             fDir={'column'}
             maxH={'100vh'}
             bg={BasicVar.bg2.label}
-            maxW={isShow ? ChatboxVar.w.label : '0px'}
+            minW={isShow ? ChatboxVar.w.label : '0px'}
+            w={isShow ? ChatboxVar.w.label : '0px'}
             bShadow={styledShadow}
             overflow={'hidden'}
             transition={'transform ease-in-out .2s'}
@@ -185,6 +187,7 @@ const ChatBox = () => {
                     hAlign={'flex-end'}
                     fDir={'column'}
                     g={'1rem'}
+                    h={'100%'}
                     fFamily={BasicVar.font3.label}
                 >
                     {msgs.map((item: MessageType, key: number) => (
