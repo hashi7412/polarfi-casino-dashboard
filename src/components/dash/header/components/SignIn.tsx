@@ -5,12 +5,24 @@ import Heading from "elements/heading";
 import Link from "elements/link";
 import Text from "elements/text";
 import { BasicVar, DefaultColor, FontSize } from "styles/variables";
+import useStore from "useStore";
 
 interface PropsType {
     setIsSignin: any
 }
 
 const SignInForm = ({ setIsSignin }: PropsType) => {
+
+    const { update } = useStore();
+
+    const submit = () => {
+        update({
+            user: {
+                userame: 'egghead.kenzo@gmail.com'
+            }
+        })
+    }
+
     return (
         <Fragment>
             <Heading

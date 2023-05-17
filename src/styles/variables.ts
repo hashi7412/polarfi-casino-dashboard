@@ -64,7 +64,7 @@ const BasicVar = {
 
 const FontSize = {
 	fSize:			{ value: '1rem',				key: '--fsize',					label: 'var(--fsize)' },
-	fSize1:			{ value: '3.75rem',				key: '--fsize1',				label: 'var(--fsize1)' },
+	fSize1:			{ value: '2.5rem',				key: '--fsize1',				label: 'var(--fsize1)' },
 	fSize2:			{ value: '2rem',				key: '--fsize2',				label: 'var(--fsize2)' },
 	fSize3:			{ value: '1.5rem',				key: '--fsize3',				label: 'var(--fsize3)' },
 	fSize4:			{ value: '1.3rem',				key: '--fsize4',				label: 'var(--fsize4)' },
