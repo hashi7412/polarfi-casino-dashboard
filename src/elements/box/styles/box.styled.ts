@@ -74,7 +74,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.bdl			? `border-left: ${styles.bdl};`					: ``}
 		${styles.bdr			? `border-right: ${styles.bdr};`				: ``}
 		${styles.otl			? `outline: ${styles.otl};`						: ``}
-		${styles.otlt			? `outline-top: ${styles.otlt};`					: ``}
+		${styles.otlt			? `outline-top: ${styles.otlt};`				: ``}
 		${styles.otlb			? `outline-bottom: ${styles.otlb};`				: ``}
 		${styles.otll			? `outline-left: ${styles.otll};`				: ``}
 		${styles.otlr			? `outline-right: ${styles.otlr};`				: ``}
@@ -85,10 +85,11 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.transition		? `transition: ${styles.transition};`			: ``}
 		${styles.cursor			? `cursor: ${styles.cursor};`					: ``}
 		${styles.content		? `content: ${styles.content};`					: ``}
+		${styles.other 			? styles.other									: ``}
 	`
 }
 
-export const setPseudoStyle = ({ after, before, hover, active, other, ...rest }: CSSElementStyleType) => {
+export const setPseudoStyle = ({ after, before, hover, active, ...rest }: CSSElementStyleType) => {
 	return `
 		${setStyle(rest)}
 
@@ -96,7 +97,6 @@ export const setPseudoStyle = ({ after, before, hover, active, other, ...rest }:
 		${before ? `&:before { ${setStyle(before)} }` : ``}
 		${hover ? `&:hover { ${setStyle(hover)} }` : ``}
 		${active ? `&:active { ${setStyle(active)} }` : ``}
-		${other ? other : ``}
 	`
 }
 

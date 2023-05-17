@@ -5,6 +5,7 @@ import { setPseudoStyle } from 'elements/box/styles/box.styled';
 import { device } from 'styles/variables'
 
 export const StyledLink = styled(Link)<ElementDefaultProps>`
+	${props => props.underline && `text-decoration: underline;`}
 	${props => {
 		const { mobileS, mobileM ,mobileL, tablet, laptop, laptopL, desktop, desktopL, ...rest } = props;
 

@@ -109,6 +109,7 @@ declare interface CSSInlineStyleType {
 	cursor?:			CursorType
 	content?:			ContentType
 	clipPath?:			ClipPathType
+	other?:				string
 }
 
 declare interface CSSElementStyleType extends CSSInlineStyleType {
@@ -116,7 +117,6 @@ declare interface CSSElementStyleType extends CSSInlineStyleType {
 	before?:			CSSInlineStyleType
 	hover?:				CSSInlineStyleType
 	active?:			CSSInlineStyleType
-	other?:				string
 }
 
 declare interface CSSResponsiveStyleType extends CSSElementStyleType {

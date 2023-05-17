@@ -9,6 +9,7 @@ interface InputProps extends BoxPropsType {
     value?: string | number
     onChange?: any
     onKeyDown?: any
+    type?: 'text' | 'email' | 'password'
 }
 
 const Input = ({
@@ -17,13 +18,14 @@ const Input = ({
     value,
     onChange,
     onKeyDown,
+    type,
     ...rest
 }: InputProps) => {
     return (
         <FBox
             g={'0.5rem'}
             w={'100%'}
-            p={'1rem 1.5rem'}
+            p={'0.8rem 1.5rem'}
             valign={'center'}
             bg={BasicVar.bgCard.label}
             bdradius={BasicVar.bRound.label}
@@ -31,6 +33,7 @@ const Input = ({
         >
             <Box
                 as={'input'}
+                type={type}
                 value={value}
                 onChange={onChange}
                 onKeyDown={onKeyDown}

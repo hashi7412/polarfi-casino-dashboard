@@ -40,6 +40,7 @@ const BasicVar = {
 	font1:			{ value: 'Gilroy',		 		key: '--font1', 				label: 'var(--font1)' },
 	font2:			{ value: 'Tital-One',			key: '--font2', 				label: 'var(--font2)' },
 	font3:			{ value: 'ArefRuqaa',			key: '--font3', 				label: 'var(--font3)' },
+	font4:			{ value: 'Amita',				key: '--font4', 				label: 'var(--font4)' },
 	lineH:			{ value: '1.5em', 				key: '--line-height', 			label: 'var(--line-height)' },
 	bg:				{ value: '#1A1428', 			key: '--bg', 					label: 'var(--bg)' },
 	bg2:			{ value: '#1B1C2D', 			key: '--bg2', 					label: 'var(--bg2)' },
