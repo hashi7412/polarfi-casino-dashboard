@@ -72,13 +72,14 @@ const ChatBox = () => {
     const [msg, setMsg] = useState<string>('');
     const [msgs, setMsgs] = useState<MessageType[]>([]);
     const msgBoxRef = useRef<HTMLDivElement>(null);
+    const baseUrl = process.env.REACT_APP_SOCKET_BASE_URL || 'ws://localhost:8080/ws';
     const { sendMessage, lastMessage, readyState } = useWebSocket(
-        'ws://localhost:4125',
+        baseUrl,
         {
             shouldReconnect: (closeEvent) => {
                 return didUnmount.current === false;
             },
-            reconnectAttempts: 10,
+            reconnectAttempts: 3000,
             reconnectInterval: 3000
         }
     );
@@ -158,6 +159,7 @@ const ChatBox = () => {
                 p={'0 1.5rem'}
                 bg={BasicVar.bgCard.label}
                 bShadow={styledShadow}
+                zIndex={3}
             >
                 <Heading
                     level={5}
@@ -187,7 +189,7 @@ const ChatBox = () => {
                     hAlign={'flex-end'}
                     fDir={'column'}
                     g={'1rem'}
-                    h={'100%'}
+                    minH={'100%'}
                     fFamily={BasicVar.font3.label}
                 >
                     {msgs.map((item: MessageType, key: number) => (

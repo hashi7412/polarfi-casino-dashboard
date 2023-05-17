@@ -78,7 +78,9 @@ const useStore = () => {
 	const dispatch = useDispatch();
 	const update = (payload: Partial<StoreObject>) => dispatch(slice.actions.update(payload))
 
-	return { ...G, T, update }
+	const logout = () => update({ user: null });
+
+	return { ...G, T, update, logout }
 }
 
 export default useStore;

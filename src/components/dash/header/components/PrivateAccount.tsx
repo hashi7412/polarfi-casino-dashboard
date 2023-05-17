@@ -1,12 +1,14 @@
+import React from "react";
 import Dropdown from "components/dropdown";
 import { Box } from "elements";
 import FBox from "elements/fbox";
 import Img from "elements/img";
 import Text from "elements/text";
-import React from "react";
 import { BasicVar, styledShadow } from "styles/variables";
+import useStore from "useStore";
 
 const PrivateAccount = () => {
+    const { logout } = useStore();
     return (
         <Dropdown
             thumb={(
@@ -49,6 +51,7 @@ const PrivateAccount = () => {
             >
                 <Box
                     as={'li'}
+                    onClick={logout}
                     p={'0.5rem 1rem'}
                     w={'100%'}
                     bdradius={BasicVar.bRadius1.label}
