@@ -14,7 +14,7 @@ const Heading: React.FC<PropsType & BoxPropsType> = ({ children, level, ...rest 
             fWeight={rest.fWeight ? rest.fWeight : FontStyle.bold}
             m={rest.m ? rest.m : '0'}
             mb={rest.mb ? rest.mb : '0.45em'}
-            fSize={rest.fSize ? rest.fSize : FontSize[`fSize${level}`].label}
+            fsize={rest.fSize ? rest.fSize : FontSize[`fSize${level}`].label}
             {...rest}
         >
             {children}

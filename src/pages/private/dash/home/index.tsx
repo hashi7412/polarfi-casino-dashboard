@@ -63,7 +63,7 @@ const DashHome = () => {
 					<Heading
 						level={1}
 						mb={'0'}
-						fSize={FontSize.fSize1.label}
+						fsize={FontSize.fSize1.label}
 						fFamily={BasicVar.font2.label}
 					>
 						<Text

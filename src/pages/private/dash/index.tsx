@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "elements";
 import FBox from "elements/fbox";
 import Sidebar from "components/dash/sidebar";
 import Header from "components/dash/header";
 import ChatBox from "components/chat";
+import useStore from "useStore";
 
 const DashLayout = () => {
     return (

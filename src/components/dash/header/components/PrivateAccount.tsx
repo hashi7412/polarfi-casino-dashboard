@@ -9,6 +9,7 @@ import useStore from "useStore";
 
 const PrivateAccount = () => {
     const { logout } = useStore();
+
     return (
         <Dropdown
             thumb={(
@@ -51,7 +52,7 @@ const PrivateAccount = () => {
             >
                 <Box
                     as={'li'}
-                    onClick={logout}
+                    onClick={() => logout()}
                     p={'0.5rem 1rem'}
                     w={'100%'}
                     bdradius={BasicVar.bRadius1.label}

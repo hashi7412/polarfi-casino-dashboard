@@ -43,7 +43,7 @@ const SignUpForm = ({ setIsSignin }: PropsType) => {
                 alignSelf={'flex-end'}
                 mb={'2rem'}
                 color={DefaultColor.warning.label}
-                fSize={FontSize.fSize6.label}
+                fsize={FontSize.fSize6.label}
                 underline
             >Forgot your password</Link>
             <Button

@@ -46,7 +46,7 @@ const Tab: React.FC<PropsType> = ({ children, items, activeKey, setActiveKey }) 
                             <Text
                                 p={'0.2rem 0.5rem'}
                                 bg={DefaultColor.black.label}
-                                fSize={FontSize.fSize6.label}
+                                fsize={FontSize.fSize6.label}
                                 color={DefaultColor.white.label}
                                 bdradius={BasicVar.bRadius.label}
                             >

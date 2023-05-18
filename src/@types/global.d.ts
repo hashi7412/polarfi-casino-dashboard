@@ -17,6 +17,7 @@ declare interface StoreObject {
 	user:				UserObject | null
 	isChat:				boolean,
 	isMobileNav:		boolean
+	cookie:			string | null
 }
 
 declare interface CSSInlineStyleType {
@@ -71,7 +72,7 @@ declare interface CSSInlineStyleType {
 	ml?:				MarginType
 	bg?:				BgType
 	fFamily?:			FontFamilyType
-	fSize?:				FontSizeType
+	fsize?:				FontSizeType
 	fWeight?:			FontWeightType
 	tAlign?:			TextAlignType
 	txtTrans?:			TextTransformType
