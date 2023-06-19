@@ -8,6 +8,7 @@ import Heading from "elements/heading";
 import Text from "elements/text";
 import React from "react";
 import { BasicVar, DefaultColor, FontSize, styledShadow } from "styles/variables";
+import useStore from "useStore";
 
 const items: CategoryItemType[] = [
 	{ label: "My Bets", key: 'mybets' },
@@ -38,6 +39,7 @@ const data = [
 
 const DashHome = () => {
 
+	const {T} = useStore();
 	const [tabIndex, setTabIndex] = React.useState(0);
 
 	return (
@@ -86,7 +88,7 @@ const DashHome = () => {
 						maxW={'400px'}
 						tShadow={styledShadow}
 					>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor
+						${T("home.hero.desc")}
 					</Text>
 					<Button
 						bg={DefaultColor.success.label}

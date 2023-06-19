@@ -27,7 +27,7 @@ const useSocket = (api: string) => {
 
         console.log(JSON.stringify(req));
 
-        // sendMessage(JSON.stringify(req))
+        sendMessage(JSON.stringify(req))
     }
 
     useEffect(() => {

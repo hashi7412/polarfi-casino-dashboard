@@ -85,6 +85,7 @@ const ChatBox = () => {
 
     useEffect(() => {
         if (res) {
+            setMsgs([]);
             // console.log(res);
             // let temp = res.data.replace(/\\"/g, '~!~');
             // temp = temp.replace(/"/g, '');

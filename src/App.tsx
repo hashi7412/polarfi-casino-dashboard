@@ -17,7 +17,7 @@ function App() {
     useEffect(() => {
         if (cookie)
             setCookie()
-    }, [])
+    }, [cookie, setCookie])
 
 	return (
 		<Routes>
