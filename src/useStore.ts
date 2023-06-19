@@ -1,5 +1,13 @@
+import { v4 as uuidv4 } from 'uuid';
 import { createSlice } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+
+const setDocumentCookie = () => {
+	const cookie = uuidv4()
+	document.cookie = `${process.env.REACT_APP_KEY}=${cookie}; path=/; sameSite=true; expires=${new Date(+new Date() + 7 * 86400000).toUTCString()}`
+	return cookie
+}
 
 export const getDate = (time: number) => {
 	const d = new Date(time);
@@ -14,6 +22,7 @@ const langs: any = {
 const initialState: StoreObject = {
 	lang: "en-US",
 	theme: "dark",
+	cookie: null,
 	user: null,
 	isChat: false,
 	isMobileNav: false
@@ -31,9 +40,9 @@ const getStore = (initialState: StoreObject) => {
 				}
 			}
 		}
-		// if (initialState.cookie === '') {
-		// initialState.cookie = uuidv4();
-		// }
+		if (initialState.cookie === '') {
+			initialState.cookie = uuidv4();
+		}
 	} catch (err) {
 		console.log(err);
 	}
@@ -61,6 +70,7 @@ export const slice = createSlice({
 })
 
 const useStore = () => {
+	const navigate = useNavigate();
 	const G = useSelector((state: StoreObject) => state);
 	const L = langs[G.lang];
 
@@ -78,9 +88,17 @@ const useStore = () => {
 	const dispatch = useDispatch();
 	const update = (payload: Partial<StoreObject>) => dispatch(slice.actions.update(payload))
 
-	const logout = () => update({ user: null });
+	const setCookie = (extra?: Partial<StoreObject>) => {
+		const cookie = setDocumentCookie()
+		update({ cookie, ...extra })
+	}
 
-	return { ...G, T, update, logout }
+	const logout = (extra?: StoreObject) => {
+		setCookie({ user: null, ...extra})
+		navigate('/')
+	}
+
+	return { ...G, T, update, setCookie, logout }
 }
 
 export default useStore;

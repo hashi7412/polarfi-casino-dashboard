@@ -6,8 +6,9 @@ import GlobalStyle from 'styles/globalStyle';
 import { configureStore } from '@reduxjs/toolkit';
 import { slice } from 'useStore';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-const store = configureStore({reducer: slice.reducer});
+const store = configureStore({ reducer: slice.reducer });
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -15,8 +16,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<Provider store={store}>
-		<GlobalStyle />
-		<App />
+		<BrowserRouter>
+			<GlobalStyle />
+			<App />
+		</BrowserRouter>
 	</Provider>
 );
 

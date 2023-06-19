@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "components/icon";
 import FBox from "elements/fbox";
 import Heading from "elements/heading";
@@ -9,14 +9,13 @@ import Text from "elements/text";
 import Input from "components/input";
 import useStore, { getDate } from "useStore";
 import { DefaultColor } from "styles/variables";
-import useWebSocket from 'react-use-websocket';
+import useSocket from "utils/socket.utils";
 
 interface MessageType {
     account: UserObject
     msg: string
     time?: number
 }
-
 
 const MessageBox = ({ account, msg, time }: MessageType) => {
     return (
@@ -44,7 +43,7 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
                 >
                     <Text
                         as={'p'}
-                        fSize={FontSize.fSize6.label}
+                        fsize={FontSize.fSize6.label}
                         color={DefaultColor.warning.label}
                         tAlign={'right'}
                     >
@@ -52,7 +51,7 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
                     </Text>
                     <Text
                         as={'p'}
-                        fSize={FontSize.fSize6.label}
+                        fsize={FontSize.fSize6.label}
                         color={BasicVar.color2.label}
                         tAlign={'right'}
                     >
@@ -67,22 +66,11 @@ const MessageBox = ({ account, msg, time }: MessageType) => {
 
 const ChatBox = () => {
     const { isChat, update } = useStore();
-    const didUnmount = useRef(false);
     const [isShow, setIsShow] = useState<boolean>(isChat);
     const [msg, setMsg] = useState<string>('');
     const [msgs, setMsgs] = useState<MessageType[]>([]);
-    const msgBoxRef = useRef<HTMLDivElement>(null);
-    const baseUrl = process.env.REACT_APP_SOCKET_BASE_URL || 'ws://localhost:8080/ws';
-    const { sendMessage, lastMessage, readyState } = useWebSocket(
-        baseUrl,
-        {
-            shouldReconnect: (closeEvent) => {
-                return didUnmount.current === false;
-            },
-            reconnectAttempts: 3000,
-            reconnectInterval: 3000
-        }
-    );
+
+    const { send, res } = useSocket('');
 
     const chat = () => {
         const data = {
@@ -91,40 +79,21 @@ const ChatBox = () => {
             },
             msg: msg,
         }
-        sendMessage(JSON.stringify(data));
+        send(data);
         setMsg('');
     }
 
     useEffect(() => {
-        if (lastMessage) {
-            let temp = lastMessage.data.replace(/\\"/g, '~!~');
-            temp = temp.replace(/"/g, '');
-            temp = temp.replace(/~!~/g, "\"");
-            const data = JSON.parse(temp);
-            setMsgs(data);
+        if (res) {
+            setMsgs([]);
+            // console.log(res);
+            // let temp = res.data.replace(/\\"/g, '~!~');
+            // temp = temp.replace(/"/g, '');
+            // temp = temp.replace(/~!~/g, "\"");
+            // const data = JSON.parse(temp);
+            // setMsgs(data);
         }
-    }, [lastMessage])
-
-    useEffect(() => {
-        switch (readyState) {
-            case -1:
-                console.log('Uninstantiated');
-                return;
-            case 0:
-                console.log('Socket connecting...');
-                return;
-            case 1:
-                console.log('Socket connected');
-                return;
-            case 2:
-                console.log('Socket closing...');
-                return;
-            case 3:
-                console.log('Socket closed');
-                return;
-
-        }
-    }, [readyState])
+    }, [res])
 
     useEffect(() => {
         if (isChat === true) {
@@ -133,12 +102,6 @@ const ChatBox = () => {
             setTimeout(() => { setIsShow(false) }, 200)
         }
     }, [isChat])
-
-    useEffect(() => {
-        return () => {
-            didUnmount.current = true;
-        };
-    }, []);
 
     return true ? (
         <FBox
@@ -180,7 +143,6 @@ const ChatBox = () => {
                 </Box>
             </FBox>
             <Box
-                ref={msgBoxRef}
                 flex={1}
                 p={'0 1rem'}
                 overflow={'auto'}

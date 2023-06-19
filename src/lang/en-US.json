@@ -1,3 +1,17 @@
 {
-    
+	"lang": "en",
+	"name": "Polarfi Casino Dashboard",
+	"description": "Dashboard for Polarfi casino platform",
+
+	"menu.dashboard": "Dashboard",
+	"menu.games": "Casino Games",
+	"menu.topup": "Top Up Balance",
+	"menu.setting": "Setting",
+	"menu.logout": "Log out",
+
+	"signin": "Sign In",
+	"signup": "Sign Up",
+
+	"home.hero.title": "WELCOME TO  POLARFI JACKPOT",
+	"home.hero.desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor"
 }

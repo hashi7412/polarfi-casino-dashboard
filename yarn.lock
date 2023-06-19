@@ -2186,9 +2186,14 @@
   resolved "https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz"
   integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
 
+"@types/uuid@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.npmjs.org/@types/uuid/-/uuid-9.0.1.tgz"
+  integrity sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==
+
 "@types/ws@^8.5.1":
   version "8.5.4"
-  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.4.tgz#bb10e36116d6e570dd943735f86c933c1587b8a5"
+  resolved "https://registry.npmjs.org/@types/ws/-/ws-8.5.4.tgz"
   integrity sha512-zdQDHKUgcX/zBc4GrwsE/7dVdAD8JR4EuiAXiiUhhfyIJXXb2+PrGshFyeXWQPMmmZ2XxgaqclgpIC7eTXc1mg==
   dependencies:
     "@types/node" "*"
@@ -7727,7 +7732,7 @@ react-scripts@^5.0.1:
 
 react-use-websocket@^4.3.1:
   version "4.3.1"
-  resolved "https://registry.yarnpkg.com/react-use-websocket/-/react-use-websocket-4.3.1.tgz#13cd2fd2e0fb90010482ab2858f8ae81f2ce85c2"
+  resolved "https://registry.npmjs.org/react-use-websocket/-/react-use-websocket-4.3.1.tgz"
   integrity sha512-zHPLWrgcqydJaak2O5V9hiz4q2dwkwqNQqpgFVmSuPxLZdsZlnDs8DVHy3WtHH+A6ms/8aHIyX7+7ulOcrnR0Q==
 
 react@^18.2.0:
@@ -8988,6 +8993,11 @@ uuid@^8.3.2:
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.npmjs.org/uuid/-/uuid-9.0.0.tgz"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
+
 v8-to-istanbul@^8.1.0:
   version "8.1.1"
   resolved "https://registry.npmjs.org/v8-to-istanbul/-/v8-to-istanbul-8.1.1.tgz"
@@ -9465,7 +9475,7 @@ ws@^7.4.6:
 
 ws@^8.13.0:
   version "8.13.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.13.0.tgz#9a9fb92f93cf41512a0735c8f4dd09b8a1211cd0"
+  resolved "https://registry.npmjs.org/ws/-/ws-8.13.0.tgz"
   integrity sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==
 
 xml-name-validator@^3.0.0:

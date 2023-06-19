@@ -47,7 +47,7 @@ export const setStyle = (styles: ElementDefaultProps) => {
 		${styles.mb				? `margin-bottom: ${styles.mb};`				: ``}
 		${styles.tAlign			? `text-align: ${styles.tAlign};`				: ``}
 		${styles.fFamily		? `font-family: ${styles.fFamily};`				: ``}
-		${styles.fSize			? `font-size: ${styles.fSize};`					: ``}
+		${styles.fsize			? `font-size: ${styles.fsize};`					: ``}
 		${styles.fWeight		? `font-weight: ${styles.fWeight};`				: ``}
 		${styles.txtTrans		? `text-transform: ${styles.txtTrans};`			: ``}
 		${styles.lSpace			? `letter-spacing: ${styles.lSpace};`			: ``}
