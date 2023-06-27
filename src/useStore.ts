@@ -95,7 +95,7 @@ const useStore = () => {
 
 	const logout = (extra?: StoreObject) => {
 		setCookie({ user: null, ...extra})
-		navigate('/')
+		navigate('/dash')
 	}
 
 	return { ...G, T, update, setCookie, logout }

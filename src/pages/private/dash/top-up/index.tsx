@@ -53,12 +53,34 @@ const Topup = () => {
                 </Button>
             </FBox>
             <Modal isModal={isModal} close={() => setIsModal(false)}>
-                <Box>
+                <Box 
+                    bg={BasicVar.bg.label}
+                    p={"2rem 2rem"}
+                    bdradius={"1rem"}
+                >
                     <Heading
-                        level={1}
+                        level={3}
+                        mb={"2rem"}
+                        tAlign={"center"}
                     >
-                        Hello World
+                        Top up balance
                     </Heading>
+                    <FBox
+                        fDir={"column"}
+                        g={"1rem"}
+                    >
+                        <Input
+                            rightSide={(
+                                <Text
+                                    color={BasicVar.color2.label}
+                                    fWeight={FontStyle.bold.label}
+                                >POL</Text>
+                            )}
+                            value={balance}
+                            onChange={(e: any) => setBalance(e.target.value)}
+                        />
+                        <Button>Top Up</Button>
+                    </FBox>
                 </Box>
             </Modal>
         </React.Fragment>
